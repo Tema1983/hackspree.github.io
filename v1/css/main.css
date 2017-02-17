@@ -134,11 +134,11 @@ a:link, a:visited {
 color: #e91e63 !important;
 }
 
-.upjoystream-large-text{
+.hackspree-large-text{
   /* font-size: 3rem !important;
   height: 3rem !important;
    */
-  font-size: 30px !important;
+  font-size: 20px !important;
   font-weight: 700 !important;
   background-color: white !important;
   background-image: none !important;
