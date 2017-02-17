@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<title>hackspree</title>
+    	<style>
+		html, body {
+/*
+	    	height: 100%
+*/
+	    }
+		body {
+			font-family:courier;
+	   	}
+	    pre {
+	 		margin: 0;
+	        padding: 0;
+	        font-size: 30px;
+		}
+		div#outer {
+			top: 50%;
+	        left: 0%;
+	        margin-top: -100px;
+	        position: absolute;
+	        height: 200px;
+		/*width: 99%;
+		 */
+		margin-left: 20px;
+		}
+		span#prompt {
+	  		margin-right: 5px;
+		}
+		div#title {
+			font-size: 50px;
+			font-weight: bold;
+		}
+	 	div#dynamic {
+	   		font-size: 40px;
+	 	}
+	  	div#static {
+			font-size: 16px;
+	 		position: absolute;
+			bottom: 0;
+			margin-bottom: 20px;
+	        margin-left: 10px;
+		}
+	 	div.output {
+	   		display: none;
+	   	}
+	  	@-webkit-keyframes blinker { from { opacity: 1.0; } to { opacity: 0.0; } } 
+		.css3-blink { 
+	 		-webkit-animation-name: blinker; 
+	 		-webkit-animation-iteration-count: infinite; 
+	  		-webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0); 
+	  		-webkit-animation-duration: 1s; 
+		}
+		#hiddenBox {
+			left:-1000px;
+			overflow-x:none;
+			position: absolute;
+			width:0;
+			height:0;
+		}
+	    </style>
+	    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	    <script type="text/javascript">
+	      $(document).ready(function() {
+			$('#hiddenBox').focus();
+			$('#hiddenBox').val('');
+			$('#static').html('<sup>*</sup>By that, I mean that it may very well be a real command. It\'s just that I\'m lazy and haven\'t implemented it yet. Check back soon :-)');
+		
+			$(window).keydown(function(event){
+				var command = $('#command').html();
+				// User hit backspace
+	          	if(event.which == 8) {
+	            	$('#command').text(command.slice(0,-1));
+	            	event.preventDefault();
+	          	}
+			});
+		
+	        $(window).keypress(function(event){
+	        	var command = $('#command').html();
+				// User hit enter
+	          	if (event.which == 13) {
+	            	event.preventDefault();
+					// There's some command present
+					if(command.length === 0 || command === "clear" || command === "cd") {
+						$('#command').text('');
+						$('.output').hide();
+					}
+	            	else {
+						$.post(
+							"shell.php", 
+							{ command: command }, 
+							function(response){ 
+								$('#command').text('');
+								if(response && (response.output || response.isCommand)) {
+									if(response.isExecutable) {
+										$('#dynamic').html('Loading...');
+										eval(response.output);
+									}
+									else {
+			              				$('#dynamic').html(response.output);
+									}
+									$('#dynamic').show();
+	                               	$('#static')[response.isCommand ? 'hide' : 'show']();
+								}
+								else {
+									$('#dynamic').html('Psshhhh. \'' + command + '\' isn\'t even a real command.<sup>*</sup>');
+				              		$('.output').show();
+								}
+							},
+							"json"
+						);
+	            	}
+	          	}
+				// User typed something
+	          	else {
+	            	var input = String.fromCharCode(event.charCode);
+	            	//if (/[a-zA-Z0-9\-\_\/\@\#\$<>+\%\'\"()\*\&\^!=~`;:,.\?\[\]{}\\\| ]/.test(input)) {
+	              	if(event.which > 31 && event.which < 127){
+						input = input.toLowerCase();
+	              		$('#command').append(input);
+	            	}
+	          	}
+	        });
+	      });
+	    </script>
+	</head>
+	<body>
+		<p><input id="hiddenBox" type="text" /></p>
+
+		  <pre>
+  _                _                            
+ | |              | |                           
+ | |__   __ _  ___| | _____ _ __  _ __ ___  ___ 
+ | '_ \ / _` |/ __| |/ / __| '_ \| '__/ _ \/ _ \
+ | | | | (_| | (__|   <\__ \ |_) | | |  __/  __/
+ |_| |_|\__,_|\___|_|\_\___/ .__/|_|  \___|\___|
+                           | |                  
+                           |_|                  
+		  </pre>
+
+		  <div>
+		    <!-- fetch from https://api.github.com/zen -->
+		    "Truth … is much too complicated to allow anything but approximations." ~ John von Neumann
+		  </div>
+		  </br>
+		  </br>
+
+		  <div id="title"><span id="prompt"> guest@hackspree:~$ </span><span id="command"></span><span class="css3-blink"><blink>_</blink></span></div>
+		  <div id="dynamic" class="output"></div>
+		  <div id="outer">
+		  </div>
+		<div id="static" class="output"></div>
+	</body>
+</html>
