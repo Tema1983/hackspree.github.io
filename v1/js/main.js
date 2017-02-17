@@ -4,7 +4,7 @@ console.log('%c | --------   hackspree   --------  |', 'background: white; color
 console.log('%c | -------------------------------- |', 'background: white; color: green; display: block;');
 
 $(document).ready(function () {
-  // noty
+    // noty
 
   function nodify(type, text) {
     var n = noty({
