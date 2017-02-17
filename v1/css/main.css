@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200&subset=latin-ext');
+
 html, body {
   height: 100%;
 }
@@ -13,12 +15,11 @@ body {
   color: black;
   background-color: white;
 
-  font-family: 'Inconsolata', monospace;
-
+  font-family: 'Source Code Pro', monospace;
   /*
+  font-family: 'Inconsolata', monospace;
   font-family: 'Poiret One', cursive;
   font-family: 'Oswald';
-  font-family: 'Modak', cursive;
    * font-weight: 700;
    */
   font-size: 14px;
