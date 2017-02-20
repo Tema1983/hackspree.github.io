@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 html, body {
     height: 100%;
@@ -196,13 +197,13 @@ a{
     font-family: 'Source Code Pro', monospace;
 
     text-align: center !important;
-    font-size:30px;
+    font-size: 25px !important;
     font-weight: bold !important;
     word-break:break-all !important;
     white-space: pre-wrap; 
     background-color: white;
     color: #626b7f !important;
-    margin: 5px;
+    margin: 0px !important;
     text-shadow: 0.1px 0.1px 3px white;
 /*
     color: #088837 !important;
@@ -213,13 +214,13 @@ a{
     padding-top: 20px;
     padding-bottom: 20px;
     margin-bottom: 0px !important;
-    height: 100px !important;
+    border: 1px solid #088837 !important;
 */
  
+    height: 80px !important;
     display: inline-block !important;
     width: 1200px !important;
-    border: 1px solid #088837 !important;
-
+    border: 1px solid #85ddba !important;
     position: static !important; /* anything but static */
 }
 
@@ -291,3 +292,15 @@ input:-webkit-autofill:active {
 .hvr-shadow:hover, .hvr-shadow:focus, .hvr-shadow:active {
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
 }
+
+.ui-widget-content{
+    font-family: 'Lato', monospace !important;
+    font-size: 22px !important;
+    color: black !important;
+    background-color: #d9edf7 !important;
+    font-size: 1em !important;
+/*
+    font-family: 'Source Code Pro', monospace !important;
+box-shadow: 12px 0 15px -4px rgba(31, 73, 125, 0.8), -12px 0 8px -4px rgba(31, 73, 125, 0.8);
+*/
+} 

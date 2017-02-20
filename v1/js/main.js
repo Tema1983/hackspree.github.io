@@ -7,12 +7,15 @@ console.log('%c | -------------------------------- |', 'background: white; color
 
 
 $(document).ready(function () {
-
+/*
     $( ".accordion" ).accordion({
         active: false,
-        collapsible: true
+        collapsible: true,
+        //heightStyle: 'content'
+        heightStyle: 'panel'
     });
 
+*/
     $( ".tabs" ).tabs({
         event: "mouseover"
     });
@@ -215,17 +218,29 @@ $(document).ready(function () {
                                                 +
                                                 '<div>'
                                                 +
-                                                problem["statment"]
-                                                + 
+                                                '<div>'
+                                                +
+                                               // divide the contets of this into two, one for gitlapses solutions and one for problem statment
+                                                +
+                                                '<div style="width: 40%; float:left !important"> somthing 1 </div>'
+                                                +
+                                                '<div style="width: 40%; float:right !important">' + problem["statment"] + '</div>'
+                                                +
                                                 '</div>'
                                                 + 
                                                 '</div>'
+                                                + 
+                                                '</div>'
+                                                + 
+                                                '</br>'
                                                );
 
                     $( ".accordion" ).accordion({
                         collapsible: true,
                         active : false,
+                        heightStyle: 'panel'
                     });
+                    $( ".accordion" ).accordion("refresh");
 
                     //slideIndex++;
                     // $('#results').slick('slickAdd',
