@@ -210,7 +210,11 @@ $(document).ready(function () {
 
                     $('#search_results').append('<div class="accordion">'
                                                 + 
-                                                '<button id="" class="hvr-shadow result waves-effect waves-green white" >' + problem["title"] + '</button>'
+                                                '<button id="" class="hvr-shadow result waves-effect waves-green white" >' + problem["title"]
+                                                +
+                                                " ( " + problem["tags"] + " ) "
+                                                +
+                                                '</button>'
                                                 +
                                                 // divide the contets of this into two, one for gitlapses solutions and one for problem statment
                                                 '<div>'
@@ -221,7 +225,21 @@ $(document).ready(function () {
                                                 +
                                                 '<th>' + problem["statment"] + '</th>'
                                                 +
-                                                '<th>' + problem["statment"] + '</th>'
+                                                '<th> <b> Input </b> </br> </br>'
+                                                +
+                                                problem["input"]
+                                                +
+                                                '</th>'
+                                                +
+                                                '</tr>'
+                                                +
+                                                '<tr>'
+                                                +
+                                                '<th>'
+                                                +
+                                                problem["tags"]
+                                                +
+                                                '</th>'
                                                 +
                                                 '</tr>'
                                                 +

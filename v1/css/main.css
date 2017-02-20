@@ -315,6 +315,20 @@ box-shadow: 12px 0 15px -4px rgba(31, 73, 125, 0.8), -12px 0 8px -4px rgba(31, 7
     background-color: black !important;
 }
 
-table th {
-    border: 1px solid !important;
+
+table{
+    text-align: left !important;
+    border: 1px solid black !important;
+    table-layout: fixed !important;
+    width: 100% !important;
+
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+
+th, td {
+    text-align: left !important;
+    border: 1px solid black !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
