@@ -26,7 +26,8 @@ body {
     font-size: 14px;
     text-align: center !important;
 
-    width: 800px;
+    /* width must be the same value of width in .px as .result */
+    width: 1200px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -216,7 +217,7 @@ a{
 */
  
     display: inline-block !important;
-    width: 800px !important;
+    width: 1200px !important;
     border: 1px solid #088837 !important;
 
     position: static !important; /* anything but static */
