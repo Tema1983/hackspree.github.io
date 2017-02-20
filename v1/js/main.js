@@ -210,24 +210,23 @@ $(document).ready(function () {
 
                     $('#search_results').append('<div class="accordion">'
                                                 + 
-                                                '<button id="" class="hvr-shadow result waves-effect waves-green white" > '
-                                                + 
-                                                problem["title"]
+                                                '<button id="" class="hvr-shadow result waves-effect waves-green white" >' + problem["title"] + '</button>'
                                                 +
-                                                '</button>'
-                                                +
+                                                // divide the contets of this into two, one for gitlapses solutions and one for problem statment
                                                 '<div>'
                                                 +
-                                                '<div>'
+                                                '<table>'
                                                 +
-                                               // divide the contets of this into two, one for gitlapses solutions and one for problem statment
+                                                '<tr>'
                                                 +
-                                                '<div style="width: 40%; float:left !important"> somthing 1 </div>'
+                                                '<th>' + problem["statment"] + '</th>'
                                                 +
-                                                '<div style="width: 40%; float:right !important">' + problem["statment"] + '</div>'
+                                                '<th>' + problem["statment"] + '</th>'
                                                 +
-                                                '</div>'
-                                                + 
+                                                '</tr>'
+                                                +
+                                                '</table>'
+                                                +
                                                 '</div>'
                                                 + 
                                                 '</div>'
@@ -240,7 +239,7 @@ $(document).ready(function () {
                         active : false,
                         heightStyle: 'panel'
                     });
-                    $( ".accordion" ).accordion("refresh");
+                    // $( ".accordion" ).accordion("refresh");
 
                     //slideIndex++;
                     // $('#results').slick('slickAdd',
@@ -257,8 +256,8 @@ $(document).ready(function () {
 
 
 
-                $('#results').append('</br>')
-                $('#results').append('</br>')
+                //$('#results').append('</br>')
+                //$('#results').append('</br>')
 	        // $('#tpbbot').empty().append("<b>" + data.tpbbot.torrents[0].name + "</b> </br>" );
 	        //$('.greeting-content').append(data.content);
 
@@ -268,7 +267,7 @@ $(document).ready(function () {
         });
     };
 
-    $("#search").trigger('autoresize').focus();
+    $("#search_results").trigger('autoresize').focus();
 
     var timerid;	
     $("#search").on("input",function(e){
