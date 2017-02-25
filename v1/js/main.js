@@ -208,6 +208,8 @@ $(document).ready(function () {
                     console.log (problem["title"]);
                     // console.log(problem);
 
+
+
                     $('#search_results').append('<div class="accordion">'
                                                 + 
                                                 '<button id="" class="hvr-shadow result waves-effect waves-green white" >' + problem["title"]
@@ -219,31 +221,40 @@ $(document).ready(function () {
                                                 // divide the contets of this into two, one for gitlapses solutions and one for problem statment
                                                 '<div>'
                                                 +
-                                                '<table>'
+                                                '<div class="grid-stack">'
                                                 +
-                                                '<tr>'
+                                                '<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="6">'
                                                 +
-                                                '<th>' + problem["statment"] + '</th>'
-                                                +
-                                                '<th> <b> Input </b> </br> </br>'
-                                                +
-                                                problem["input"]
-                                                +
-                                                '</th>'
-                                                +
-                                                '</tr>'
-                                                +
-                                                '<tr>'
-                                                +
-                                                '<th>'
+                                                '<div class="grid-stack-item-content">'
                                                 +
                                                 problem["tags"]
                                                 +
-                                                '</th>'
+                                                '</div>' // grid-stack-item-content
                                                 +
-                                                '</tr>'
+                                                '</div>' // grid-stack-item
                                                 +
-                                                '</table>'
+                                                '<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="6">'
+                                                +
+                                                '<div class="grid-stack-item-content">'
+                                                +
+                                                problem["input"]
+                                                +
+                                                '</div>' // grid-stack-item-content
+                                                +
+                                                '</div>' // grid-stack-item
+                                                +
+                                                '<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="6">'
+                                                +
+                                                '<div class="grid-stack-item-content">'
+                                                +
+                                                problem["statment"]
+                                                +
+                                                '</div>' // grid-stack-item-content
+                                                +
+                                                '</div>' // grid-stack-item
+                                                +
+                                                // here end of gridser div
+                                                '</div>'
                                                 +
                                                 '</div>'
                                                 + 
@@ -252,6 +263,7 @@ $(document).ready(function () {
                                                 '</br>'
                                                );
 
+                    
                     $( ".accordion" ).accordion({
                         collapsible: true,
                         active : false,
@@ -259,28 +271,45 @@ $(document).ready(function () {
                     });
                     // $( ".accordion" ).accordion("refresh");
 
-                    //slideIndex++;
-                    // $('#results').slick('slickAdd',
-                    //                     '<div class="result">' + 
-                      //                   '<div class="details">' + 
-                        //                 'Name: ' + torrent.name + 
-                          //               ' </br> Seeders: ' + torrent.seeders + ' </br> Size:' + torrent.total_size + ' </br> </br>' +
-                              //           '</div>' + 
-                            //             '<button id="' + torrent.name + '" class="magnet btn waves-effect waves-yellowish white" data-clipboard-text="' +  torrent.magnet_link  + '"> copy magnet </button>' +
-                                        //'<a id= "' + number + '"class="show btn waves-effect waves-yellowish white modal-trigger" href="#theater" data-target="#theater">watch</a>'  +
-                                //         '</br> </br></div>');
-                    //console.log (a[bb].TEST1);
+                    // the gridstack 
+/*
+                    var serialization = [
+                        {x: 0, y: 0, width: 2, height: 2},
+                        {x: 3, y: 1, width: 1, height: 2},
+                        {x: 4, y: 1, width: 1, height: 1},
+                        {x: 2, y: 3, width: 3, height: 1},
+                        {x: 1, y: 4, width: 1, height: 1},
+                        {x: 1, y: 3, width: 1, height: 1},
+                        {x: 2, y: 4, width: 1, height: 1},
+                        {x: 2, y: 5, width: 1, height: 1}
+                    ];
+
+                    serialization = GridStackUI.Utils.sort(serialization);
+
+                    var grid = $('.grid-stack').data('gridstack');
+                    grid.removeAll();
+
+                    _.each(serialization, function (node) {
+                        grid.addWidget($('<div><div class="grid-stack-item-content" /></div>'),
+                                       node.x, node.y, node.width, node.height);
+                    });
+*/
+                    $(function () {
+                        var options = {
+                            cellHeight: 20,
+                            verticalMargin: 5 // 10
+                        };
+
+                        $('.grid-stack').gridstack(options);
+                    });
+                    
+                    // End of the gridstack 
                 });
 
 
 
-                //$('#results').append('</br>')
-                //$('#results').append('</br>')
-	        // $('#tpbbot').empty().append("<b>" + data.tpbbot.torrents[0].name + "</b> </br>" );
-	        //$('.greeting-content').append(data.content);
-
-	        $('#query_done').get(0).volume=0.1;
-	        $('#query_done').get(0).play();
+                $('#query_done').get(0).volume=0.1;
+                $('#query_done').get(0).play();
             },
         });
     };

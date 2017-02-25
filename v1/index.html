@@ -60,6 +60,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.2.6/gridstack.min.css" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!--
@@ -158,8 +159,8 @@
 
       </div>
 
-      
-      
+
+
       <div id="search_results" class='' style=''>
 
 <!--
@@ -168,12 +169,21 @@
             ZPD1
           </button> 
           <div>
-            <table>
-              <tr>
-                <th>A2</th>
-                <th>C2</th>
-              </tr>
-            </table>
+
+            <div class="grid-stack">
+              <div class="grid-stack-item"
+                   data-gs-x="0" data-gs-y="0"
+                   data-gs-width="4" data-gs-height="2">
+                <div class="grid-stack-item-content">ssssssssssssssssssssssssssssss</div>
+              </div>
+              <div class="grid-stack-item"
+                   data-gs-x="4" data-gs-y="0"
+                   data-gs-width="4" data-gs-height="4">
+                <div class="grid-stack-item-content">zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz</div>
+              </div>
+            </div>
+
+            
           </div>
         </div>
 
@@ -220,6 +230,8 @@
         <span>
           © 2016-2017 hackspree.com is a search engine for competitive programmers.
 </br>
+hackspree graph API includes problems, programmers, contests, mathematics, and algorithms.
+</br>
 <span style="font-size: 12px !important;">
   Any usage of hackspree constitutes an affirmative full acknowledgement & acceptance of its <a href="terms.md">ToS</a>.
 </span>
@@ -233,11 +245,14 @@
         <!--This displays an error to users that don't have it supported-->
     </audio>
 
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script src="js/moment.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
             integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
             crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.2.6/gridstack.min.js"></script>
     
     <!--
         <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
@@ -256,7 +271,6 @@
     
     <script src="js/main.js"></script>
     
-   
     
   </body>
 </html>
