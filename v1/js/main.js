@@ -223,7 +223,7 @@ $(document).ready(function () {
                                                 +
                                                 '<div class="grid-stack">'
                                                 +
-                                                '<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="6">'
+                                                '<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="6" data-gs-locked="true" data-gs-no-resize="true" data-gs-no-move="true" >'
                                                 +
                                                 '<div class="grid-stack-item-content">'
                                                 +
@@ -233,7 +233,19 @@ $(document).ready(function () {
                                                 +
                                                 '</div>' // grid-stack-item
                                                 +
-                                                '<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="6">'
+                                                
+                                                '<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="6" data-gs-locked="true" data-gs-no-resize="true" data-gs-no-move="true" >'
+                                                +
+                                                '<div class="grid-stack-item-content">'
+                                                +
+                                                problem["output"]
+                                                +
+                                                '</div>' // grid-stack-item-content
+                                                +
+                                                '</div>' // grid-stack-item
+
+                                                +
+                                                '<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="6" data-gs-locked="true" data-gs-no-resize="true" data-gs-no-move="true" >'
                                                 +
                                                 '<div class="grid-stack-item-content">'
                                                 +
@@ -243,7 +255,8 @@ $(document).ready(function () {
                                                 +
                                                 '</div>' // grid-stack-item
                                                 +
-                                                '<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="6">'
+
+                                                '<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="6" data-gs-locked="true" data-gs-no-resize="true" data-gs-no-move="true" >'
                                                 +
                                                 '<div class="grid-stack-item-content">'
                                                 +
