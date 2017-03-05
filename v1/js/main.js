@@ -27,22 +27,6 @@ $(document).ready(function () {
      //   showClose: false
     //});
 
-    $('.solutions').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        fade: true,
-        asNavFor: '.slider-nav'
-    });
-    $('.solutions-nav').slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        asNavFor: '.slider-for',
-        dots: true,
-        centerMode: true,
-        focusOnSelect: true
-    });
-    
 
 
     // noty
@@ -71,18 +55,6 @@ $(document).ready(function () {
   // noty ends
 
 
-  // scroll the results
-  $('#results').on('mousewheel', function(event) {
-    //console.log(event.deltaX, event.deltaY, event.deltaFactor);
-    window.onwheel = function(){ return false; }
-    if (event.deltaY === +1) {
-      $('#results').slick("slickNext");
-    };
-    if (event.deltaY === -1) {
-      $('#results').slick("slickPrev");
-    };
-  });
-
   // copy paste magnet
 
   var clipboard = new Clipboard('.btn', {
@@ -106,50 +78,6 @@ $(document).ready(function () {
   // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
   $('.modal-trigger').leanModal();
 
-  // prevent textbox from being affected by navigation
-  //$(document).keydown(function (e) {
-  // var element = e.target.nodeName.toLowerCase();
-  //if ((element != 'input' && element != 'textarea') || $(e.target).attr("readonly") || (e.target.getAttribute("type") ==="checkbox")) {
-  // if (e.keyCode === 8) {
-  //	return false;
-  //     }
-  //   }
-  //   // makes search gets focused whenever there is a keydown
-  //  $("#search").focus();
-    // });
-
-    /*
-      $("body").keydown(function(e){
-      var element = e.target.nodeName.toLowerCase();
-      if ((element != 'input' && element != 'textarea') || $(e.target).attr("readonly") || (e.target.getAttribute("type") ==="checkbox")) {
-      $("#search").focus();
-      }
-
-      switch(e.which) {
-      case 37: // left
-      $('#results').slick("slickPrev");
-      break;
-
-      case 38: // up
-      $('#results').slick("slickNext");
-      break;
-
-      case 39: // right
-      $('#results').slick("slickNext");
-      break;
-
-      case 40: // down
-      $('#results').slick("slickPrev");
-      break;
-
-      default: return; // exit this handler for other keys
-      }
-
-      e.preventDefault(); // prevent the default action (scroll / move caret)
-      });
-    */
-
-  //$('.carousel.carousel-slider').carousel({full_width: true});
 
   //TODO this talks to the bots endpoint to get suggestions
   $('.autocomplete').autocomplete({
@@ -212,7 +140,7 @@ $(document).ready(function () {
 
                     $('#search_results').append('<div class="accordion">'
                                                 + 
-                                                '<button id="" class="hvr-shadow result waves-effect waves-green white" >' + problem["title"]
+                                                '<button id="" class="hvr-shadow result waves-effect white" >' + problem["title"]
                                                 +
                                                 " ( " + problem["tags"] + " ) "
                                                 +
@@ -223,7 +151,7 @@ $(document).ready(function () {
                                                 +
                                                 '<div class="grid-stack">'
                                                 +
-                                                '<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="6" data-gs-locked="true" data-gs-no-resize="true" data-gs-no-move="true" >'
+                                                '<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="8" data-gs-locked="true" data-gs-no-resize="true" data-gs-no-move="true" >'
                                                 +
                                                 '<div class="grid-stack-item-content">'
                                                 +
@@ -234,7 +162,7 @@ $(document).ready(function () {
                                                 '</div>' // grid-stack-item
                                                 +
                                                 
-                                                '<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="6" data-gs-locked="true" data-gs-no-resize="true" data-gs-no-move="true" >'
+                                                '<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="8" data-gs-locked="true" data-gs-no-resize="true" data-gs-no-move="true" >'
                                                 +
                                                 '<div class="grid-stack-item-content">'
                                                 +
@@ -245,7 +173,7 @@ $(document).ready(function () {
                                                 '</div>' // grid-stack-item
 
                                                 +
-                                                '<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="6" data-gs-locked="true" data-gs-no-resize="true" data-gs-no-move="true" >'
+                                                '<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="8" data-gs-locked="true" data-gs-no-resize="true" data-gs-no-move="true" >'
                                                 +
                                                 '<div class="grid-stack-item-content">'
                                                 +
@@ -256,7 +184,7 @@ $(document).ready(function () {
                                                 '</div>' // grid-stack-item
                                                 +
 
-                                                '<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="6" data-gs-locked="true" data-gs-no-resize="true" data-gs-no-move="true" >'
+                                                '<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="8" data-gs-locked="true" data-gs-no-resize="true" data-gs-no-move="true" >'
                                                 +
                                                 '<div class="grid-stack-item-content">'
                                                 +
@@ -343,48 +271,6 @@ $(document).ready(function () {
   });
 
   // end of search functionality
-
-  var slider = $('#results');
-  // Slides
-  function initSlides(){
-    slider.slick({
-      arrows: false,
-      dots: true,
-      speed: 300,
-      fade: false,
-      lazyLoad: 'ondemand',
-
-      // it fucksup the modal calls as it returns undefined between cycle-end\cycle-start(just don't use it)
-      centerMode: false,
-      infinite: false, 
-
-      slidesToShow: 3,
-      slidesToScroll: 3,
-
-      autoplay: true,
-      //autoplay: false,
-      autoplaySpeed: 8000,
-      pauseOnHover: true,
-
-      accessibility: true,
-      cssEase: 'linear',
-
-      swipe: true,
-      swipeToSlide: true,
-      touchMove:true
-
-    });
-  };
-
-  // Initiate the slides
-  initSlides();
-
-
-  // On before slide change
-  $('#results').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-    // can be used as torrents[nextSlide] to get the choice of the result and send it to WATCH 
-    console.log(nextSlide);
-  });
 
 
 });
