@@ -1,0 +1,283 @@
+<!doctype html>
+<!--
+    Copyright © 2016-2017 hackspree. All rights reserved.
+  -->
+
+<html lang="en">
+  <head>
+    <!--
+        hackspree 
+        https://hackspree.com
+
+        Author     Mohamed Fouad aka zotherstupidguy
+        Website    https://hackspree.com
+        Copyright  2016. hackspree.
+
+        Data is not information.
+        Information is not knowledge.
+        Knowledge is not understanding.
+        Understanding is not wisdom.
+        
+        "Any sufficiently advanced technology is indistinguishable from magic." -Arthur C. Clarke
+        
+        "The expert at anything was once a beginner." -Helen Hayes
+
+
+        Far better is it to dare mighty things, to win glorius triumphs,
+        even though checkered by failure... than to rank with those poor spirits
+        who neither enjoy nor suffer much, because they live in a gray twilight
+        that knows not victory nor defeat.
+        — Theodore Roosevelt
+      -->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="hackspree">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>hackspree</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Modak" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.2.6/gridstack.min.css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/css/foundation.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/foundation.js"></script>
+        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.orange-yellow.min.css" /> 
+
+        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.min.css">
+        --> 
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <link rel="stylesheet" href="css/main.css">
+
+    
+
+  </head>
+  <body>
+
+    <!-- 
+         <div class="row">
+           <div class="settings">
+             <div class="break">
+               <div class="description">Time to Break</div>
+               <div class="value">
+                 <span class="control db">-</span> <span class="v">5</span> <span class="control ib">+</span>
+               </div>
+             </div>
+             <div class="session">
+               <div class="description">Time to AC</div>
+               <div class="value">
+                 <span class="control ds">-</span> <span class="v">25</span> <span class="control is">+</span>
+               </div>
+             </div>
+           </div>
+           <div class="pomodoro">
+             <div class="fill session">
+             </div>
+             <div class="fill break">
+             </div>
+             <div class="time-left">
+             </div>
+             <div class="status">Click to Start</div>
+           </div>
+           <div class="next-pomodoro">
+             Next
+           </div>
+           <div class="reset-pomodoro">
+             Reset
+           </div>
+         </div>
+         -->
+</br>
+
+<div class="row medium-8  columns">
+
+  <div class="row">
+    <div class="col s12">
+
+      <img src="img/logo.png" alt="hackspree" style=""/>
+
+</br>
+</br>
+<div class="row">
+  <div class="input-field col s12 hackspree-large-text">
+    <!--<input type="text" id="search" class="autocomplete upjoystream-large-text">
+      -->
+    <input type="text" id="search" class="hackspree-large-text" placeholder="search anything competitive programming" autocomplete=off>
+    
+    <br>
+    <!-- on hover try to make them look black instead of grey 
+      -->
+      <div>
+      <!-- generates random contest problem sets and invites random users to the contest -->
+      <button id="" class="waves-effect white" >
+	contest generator
+      </button>
+
+	<!-- problems, and their solutions -->
+	<input checked type="checkbox" id="problems" value="problems"><label for="problems">problems</label>
+	&nbsp;
+	<!-- programmers, their solutions, their ratings, their ranks, etc. -->
+	<input type="checkbox" id="programmers" value="programmers"><label for="programmers">programmers</label>
+	&nbsp;
+	<!-- archived, and upcoming contests from all the websites-->
+	<input type="checkbox" id="contests" value="contests"><label for="contests">contests</label>
+	&nbsp;
+	<!-- tuturials, papers, books, courses, wikipedia, etc. -->
+	<input type="checkbox" id="knowledge" value="knowledge"><label for="knowledge">knowledge</label>
+	&nbsp;
+	<!-- irc, slack, forums, etc -->
+	<input type="checkbox" id="discussions" value="discussions"><label for="discussions">discussions</label>
+	&nbsp;
+      </div> 
+  </div>
+</div>
+    </div>
+  </div>
+
+  <div id="queryStats">
+
+  </div>
+
+
+
+  <div id="search_results" class='' style=''>
+
+    <!--
+        <div class="accordion">
+          <button id="" class="hvr-shadow result waves-effect  waves-green white" >
+            ZPD1
+          </button> 
+          <div>
+
+            <div class="grid-stack">
+              <div class="grid-stack-item"
+                   data-gs-x="0" data-gs-y="0"
+                   data-gs-width="4" data-gs-height="2">
+                <div class="grid-stack-item-content">ssssssssssssssssssssssssssssss</div>
+              </div>
+              <div class="grid-stack-item"
+                   data-gs-x="4" data-gs-y="0"
+                   data-gs-width="4" data-gs-height="4">
+                <div class="grid-stack-item-content">zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz</div>
+              </div>
+            </div>
+
+            
+          </div>
+        </div>
+
+        use tests for css manipulation before js work
+        good green #088837
+
+        <button id="" class="hvr-shadow hvr-underline-from-center result waves-effect  waves-green white" > ZPD0 </button> 
+
+
+        <div class="accordion">
+          <button id="" class="hvr-shadow result waves-effect  waves-green white" >
+            ZPD1
+          </button> 
+
+          <div>
+
+            <div class="tabs">
+              <ul>
+                <li><a href="#tabs-1">Nunc tincidunt</a></li>
+                <li><a href="#tabs-2">Proin dolor</a></li>
+              </ul>
+              <div id="tabs-1">
+                ssss 
+              </div>
+              <div id="tabs-2">
+                kkkkkjjj
+              </div>
+            </div>
+
+          </div>
+          
+        </div>
+
+
+        <button id="" class="result waves-effect waves-red white" > ZPD2 </button> 
+        -->
+  </div>
+
+  
+  <footer style="background-color: white" class="mdl-mega-footer">
+    <hr>
+        </br>
+        </br>
+        <span>
+          © 2016-2017 hackspree.com is a search engine for competitive programmers.
+</br>
+hackspree graph API includes problems, programmers, contests, mathematics, and algorithms.
+</br>
+<span style="font-size: 12px !important;">
+  Any usage of hackspree constitutes an affirmative full acknowledgement & acceptance of its <a href="terms.md">ToS</a>.
+</span>
+
+        </span>
+  </footer>
+</div> 
+
+<audio id="query_done" controls hidden="hidden">
+  <source src="audio/query_done.mp3" type="audio/mpeg">
+    <!--This displays an error to users that don't have it supported-->
+</audio>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.2.6/gridstack.min.js"></script>
+
+<!--
+    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+<script src="https://vjs.zencdn.net/5.11.8/video.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.13/clipboard.min.js"></script>
+<script src="js/jquery.mousewheel.min.js"></script>
+<script src="js/noty/packaged/jquery.noty.packaged.min.js"></script>
+<script type="text/javascript" src="js/noty/themes/relax.js"></script>
+<!--
+    <script src="js/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
+    -->
+
+
+<script src="js/main.js"></script>
+
+<!-- http://h4x3x.com/ we will win! 7aneksab! -->
+  </body>
+</html>
