@@ -1,35 +1,21 @@
 <!doctype html>
 <!--
-    Copyright © 2016-2017 hackspree. All rights reserved.
+    hackspree 
+    https://hackspree.com
+
+    Author     Mohamed Fouad aka zotherstupidguy
+    Website    https://hackspree.com
+    Copyright  2016. hackspree.
+
+    Far better is it to dare mighty things, to win glorius triumphs,
+    even though checkered by failure... than to rank with those poor spirits
+    who neither enjoy nor suffer much, because they live in a gray twilight
+    that knows not victory nor defeat.
+    — Theodore Roosevelt
   -->
 
 <html lang="en">
   <head>
-    <!--
-        hackspree 
-        https://hackspree.com
-
-        Author     Mohamed Fouad aka zotherstupidguy
-        Website    https://hackspree.com
-        Copyright  2016. hackspree.
-
-        Data is not information.
-        Information is not knowledge.
-        Knowledge is not understanding.
-        Understanding is not wisdom.
-        
-        "Any sufficiently advanced technology is indistinguishable from magic." -Arthur C. Clarke
-        
-        "The expert at anything was once a beginner." -Helen Hayes
-
-
-        Far better is it to dare mighty things, to win glorius triumphs,
-        even though checkered by failure... than to rank with those poor spirits
-        who neither enjoy nor suffer much, because they live in a gray twilight
-        that knows not victory nor defeat.
-        — Theodore Roosevelt
-      -->
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="hackspree">
@@ -62,7 +48,9 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.2.6/gridstack.min.css" />
 
+   
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <!--
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/css/foundation.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/foundation.js"></script>
@@ -83,39 +71,6 @@
   </head>
   <body>
 
-    <!-- 
-         <div class="row">
-           <div class="settings">
-             <div class="break">
-               <div class="description">Time to Break</div>
-               <div class="value">
-                 <span class="control db">-</span> <span class="v">5</span> <span class="control ib">+</span>
-               </div>
-             </div>
-             <div class="session">
-               <div class="description">Time to AC</div>
-               <div class="value">
-                 <span class="control ds">-</span> <span class="v">25</span> <span class="control is">+</span>
-               </div>
-             </div>
-           </div>
-           <div class="pomodoro">
-             <div class="fill session">
-             </div>
-             <div class="fill break">
-             </div>
-             <div class="time-left">
-             </div>
-             <div class="status">Click to Start</div>
-           </div>
-           <div class="next-pomodoro">
-             Next
-           </div>
-           <div class="reset-pomodoro">
-             Reset
-           </div>
-         </div>
-         -->
 </br>
 
 <div class="row medium-8  columns">
@@ -123,111 +78,115 @@
   <div class="row">
     <div class="col s12">
 
-      <img src="img/logo.png" alt="hackspree" style=""/>
+      <img src="img/logo.png" alt="hackspree" style="height: 30px"/>
 
 </br>
 </br>
 <div class="row">
   <div class="input-field col s12 hackspree-large-text">
-    <!--<input type="text" id="search" class="autocomplete upjoystream-large-text">
-      -->
-    <input type="text" id="search" class="hackspree-large-text" placeholder="search anything competitive programming" autocomplete=off>
     
     <br>
-    <!-- on hover try to make them look black instead of grey 
-      -->
-      <div>
-      <!-- generates random contest problem sets and invites random users to the contest -->
-      <button id="" class="waves-effect white" >
-	contest generator
-      </button>
+    <div>
+<!--
+      <ul class="tabs">
+        <li class="tab col s6">
+          <a class="active" href="#test1">
+            CODE JAM
+          </a>
+        </li>
+        <li class="tab col s6">
+          <a class="" href="#test2">
+            DISTRIBUTED CODE JAM
+          </a>
+        </li>
+        <li class="tab col s6 disabled">
+          <a href="#test3">
+            KICKSTART
+          </a>
+        </li>
+        <li class="tab col s6">
+          <a href="#test4">
+            CODE JAM TO I/O FOR WOMEN
+          </a>
+        </li>
+        <li class="tab col s6">
+          <a href="#test5">
+            APAC CODE JAM
+          </a>
+        </li>
+        <li class="tab col s6">
+          <a href="#test6">
+            OTHER CONTESTS
+          </a>
+        </li>
 
-	<!-- problems, and their solutions -->
-	<input checked type="checkbox" id="problems" value="problems"><label for="problems">problems</label>
-	&nbsp;
-	<!-- programmers, their solutions, their ratings, their ranks, etc. -->
-	<input type="checkbox" id="programmers" value="programmers"><label for="programmers">programmers</label>
-	&nbsp;
-	<!-- archived, and upcoming contests from all the websites-->
-	<input type="checkbox" id="contests" value="contests"><label for="contests">contests</label>
-	&nbsp;
-	<!-- tuturials, papers, books, courses, wikipedia, etc. -->
-	<input type="checkbox" id="knowledge" value="knowledge"><label for="knowledge">knowledge</label>
-	&nbsp;
-	<!-- irc, slack, forums, etc -->
-	<input type="checkbox" id="discussions" value="discussions"><label for="discussions">discussions</label>
-	&nbsp;
-      </div> 
+      </ul>
+      <div id="test1" class="col s12">Test 1</div>
+      <div id="test2" class="col s12">Test 2</div>
+      <div id="test3" class="col s12">Test 3</div>
+      <div id="test4" class="col s12">Test 4</div>
+      -->
+<select>
+  <option>Select Contest</option>
+  <option>Code Jam</option>
+  <option>DISTRIBUTED CODE JAM</option>
+  <option>KICKSTART</option>
+  <option>CODE JAM TO I/O FOR WOMEN</option>
+  <option>APAC CODE JAM</option>
+  <option>CODE JAM TO I/O FOR WOMEN</option>
+  <option>OTHER CONTESTS</option>
+
+</select>
+
+<select>
+  <option>Select Year</option>
+  <option>2017</option>
+  <option>2016</option>
+  <option>2015</option>
+</select>
+
+
+<select>
+    <option>Select Round</option>
+    <option>Qualification Round</option>
+    <option>Final Round</option>
+  </select>
+
+  <select>
+    <option>Select Problem</option>
+    <option>A. Name of Problem</option>
+    <option>B. Name of Problem</option>
+  </select>
+
+  <select>
+    <option>Select Language</option>
+    <option>C</option>
+    <option>C++</option>
+    <option>Java</option>
+  </select>
+</div>
+
+    <!-- 
+      --> 
+    <div class="scroll">
+      <h3>Page 1</h3>
+      <p>Content here...</p>
+      <a href="instant.html">next page</a>
+    </div>
+
+    <div id="solutions" class="scroll">
+      <!--
+          <div id="" style="overflow-y: scroll; height:400px;">
+            <script src="https://gist.github.com/zotherstupidguy/31a80d531e2c9170ebd2a97ebb3035bd.js"></script>
+            <script src="https://gist.github.com/zotherstupidguy/31a80d531e2c9170ebd2a97ebb3035bd.js"></script>
+            <script src="https://gist.github.com/zotherstupidguy/31a80d531e2c9170ebd2a97ebb3035bd.js"></script>
+            -->
+      
+    </div> 
+
   </div>
 </div>
     </div>
-  </div>
-
-  <div id="queryStats">
-
-  </div>
-
-
-
-  <div id="search_results" class='' style=''>
-
-    <!--
-        <div class="accordion">
-          <button id="" class="hvr-shadow result waves-effect  waves-green white" >
-            ZPD1
-          </button> 
-          <div>
-
-            <div class="grid-stack">
-              <div class="grid-stack-item"
-                   data-gs-x="0" data-gs-y="0"
-                   data-gs-width="4" data-gs-height="2">
-                <div class="grid-stack-item-content">ssssssssssssssssssssssssssssss</div>
-              </div>
-              <div class="grid-stack-item"
-                   data-gs-x="4" data-gs-y="0"
-                   data-gs-width="4" data-gs-height="4">
-                <div class="grid-stack-item-content">zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz</div>
-              </div>
-            </div>
-
-            
-          </div>
-        </div>
-
-        use tests for css manipulation before js work
-        good green #088837
-
-        <button id="" class="hvr-shadow hvr-underline-from-center result waves-effect  waves-green white" > ZPD0 </button> 
-
-
-        <div class="accordion">
-          <button id="" class="hvr-shadow result waves-effect  waves-green white" >
-            ZPD1
-          </button> 
-
-          <div>
-
-            <div class="tabs">
-              <ul>
-                <li><a href="#tabs-1">Nunc tincidunt</a></li>
-                <li><a href="#tabs-2">Proin dolor</a></li>
-              </ul>
-              <div id="tabs-1">
-                ssss 
-              </div>
-              <div id="tabs-2">
-                kkkkkjjj
-              </div>
-            </div>
-
-          </div>
-          
-        </div>
-
-
-        <button id="" class="result waves-effect waves-red white" > ZPD2 </button> 
-        -->
   </div>
 
   
@@ -236,9 +195,7 @@
         </br>
         </br>
         <span>
-          © 2016-2017 hackspree.com is a search engine for competitive programmers.
-</br>
-hackspree graph API includes problems, programmers, contests, mathematics, and algorithms.
+          © 2016-2017 hackspree.com
 </br>
 <span style="font-size: 12px !important;">
   Any usage of hackspree constitutes an affirmative full acknowledgement & acceptance of its <a href="terms.md">ToS</a>.
@@ -271,6 +228,11 @@ hackspree graph API includes problems, programmers, contests, mathematics, and a
 <script src="js/jquery.mousewheel.min.js"></script>
 <script src="js/noty/packaged/jquery.noty.packaged.min.js"></script>
 <script type="text/javascript" src="js/noty/themes/relax.js"></script>
+<script type="text/javascript" src="js/jquery.jscroll.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js"></script>
+
+ 
 <!--
     <script src="js/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
     -->
