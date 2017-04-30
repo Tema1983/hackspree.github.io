@@ -8,7 +8,9 @@ html, body {
 }
 
 html {
-    display: table;
+    /*
+display: table;
+*/
     margin: auto;
 }
 
@@ -158,20 +160,19 @@ box-shadow: 12px 0 15px -4px rgba(31, 73, 125, 0.8), -12px 0 8px -4px rgba(31, 7
     background-color: black !important;
 }
 
-
+/*
 table{
     table-layout: fixed !important;
     border-spacing: 2px;
     width: 100% !important;
-/*
     border: 1px solid grey !important;
     text-align: left !important;
 
     border-collapse: collapse;
     border-collapse: separate;
-*/
 }
-
+*/
+ 
 .gist table {
     width: initial;
 }
