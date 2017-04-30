@@ -46,12 +46,12 @@
 
     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.2.6/gridstack.min.css" />
 
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!--
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.2.6/gridstack.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/css/foundation.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/foundation.js"></script>
         <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.orange-yellow.min.css" /> 
@@ -64,10 +64,12 @@
 
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-
-    <link rel="stylesheet" href="css/main.css">
-
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <link rel="stylesheet" href="css/main.css">
+    <!--
+      -->   
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/css/selectize.min.css"/>
+
 
     
 
@@ -75,63 +77,34 @@
   <body>
 
 </br>
-  <img src="img/logo.png" alt="hackspree" style="height: 30px"/>
+<img src="img/logo.png" alt="hackspree" style="height: 30px"/>
 </br>
 </br>
+
 
 <div class="row">
-  <div class="input-field col s12 hackspree-large-text">
-    <div>
-      <select>
-        <option>Select Contest</option>
-        <option>Code Jam</option>
-        <option>DISTRIBUTED CODE JAM</option>
-        <option>KICKSTART</option>
-        <option>CODE JAM TO I/O FOR WOMEN</option>
-        <option>APAC CODE JAM</option>
-        <option>CODE JAM TO I/O FOR WOMEN</option>
-        <option>OTHER CONTESTS</option>
-      </select>
-
-      <select>
-        <option>Select Year</option>
-        <option>2017</option>
-        <option>2016</option>
-        <option>2015</option>
-      </select>
-
-      <select>
-        <option>Select Round</option>
-        <option>Qualification Round</option>
-        <option>Final Round</option>
-      </select>
-
-      <select>
-        <option>Select Problem</option>
-        <option>A. Name of Problem</option>
-        <option>B. Name of Problem</option>
-      </select>
-
-      <select>
-        <option>Select Language</option>
-        <option>C</option>
-        <option>C++</option>
-        <option>Java</option>
-      </select>
-    </div>
-  </div>
+  <div id="search"></div>
+  <div id="select-repo"></div>
 </div>
 
-<div class='upper_navigation'> </div>
+<div class='upper_navigation' style="word-spacing: 30px;">
+  <i class="medium material-icons">turned_in_not</i>
+  <i class="medium material-icons">movie</i>
+  <i class="medium material-icons">code</i>
+  <i class="medium material-icons">stars</i>
+</div>
 <div class="row">
   <div id="solutions" class="solutionslider">
-    <!--     <div>your content</div>
-             <div>your content</div>
-             <div>your content</div>
-             -->    
+    <!--     
+             solution gists is shown here    
+      -->    
   </div>
 </div>
-<div class='lower_navigation'> </div>
+<div class='lower_navigation'>
+  <!--     
+           empty space, not used yet! maybe ads? 
+    --> 
+</div>
 
 
 
@@ -148,39 +121,43 @@
 
         </span>
 </footer>
-    </div> 
+</div> 
 
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script src="js/moment.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-            integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-            crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.2.6/gridstack.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.2.6/gridstack.min.js"></script>
 
-    <!--
-        <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
-        -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-    <script src="https://vjs.zencdn.net/5.11.8/video.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.13/clipboard.min.js"></script>
-    <script src="js/jquery.mousewheel.min.js"></script>
-    <script src="js/noty/packaged/jquery.noty.packaged.min.js"></script>
-    <script type="text/javascript" src="js/noty/themes/relax.js"></script>
-    <script type="text/javascript" src="js/jquery.jscroll.min.js"></script>
+<!--
+    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+<script src="https://vjs.zencdn.net/5.11.8/video.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.13/clipboard.min.js"></script>
+<script src="js/jquery.mousewheel.min.js"></script>
+<script src="js/noty/packaged/jquery.noty.packaged.min.js"></script>
+<script type="text/javascript" src="js/noty/themes/relax.js"></script>
+<script type="text/javascript" src="js/jquery.jscroll.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js"></script>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 
-    <!--
-        <script src="js/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
-        -->
+<!--
+    <script src="js/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
+    -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sifter/0.5.2/sifter.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microplugin/0.0.3/microplugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/selectize.min.js"></script>
 
 
-    <script src="js/main.js"></script>
+<script src="js/main.js"></script>
 
-    <!-- http://h4x3x.com/ we will win! 7aneksab! -->
-  </body>
+<!-- http://h4x3x.com/ we will win! 7aneksab! -->
+</body>
 </html>
