@@ -5,7 +5,7 @@ console.log('%c | ---------   hackspree   -------- |', 'background: white; color
 console.log('%c | -------------------------------- |', 'background: white; color: green; display: block;');
 console.log('%c | -------------------------------- |', 'background: white; color: green; display: block;');
 
-
+//TODO use history.js https://github.com/browserstate/history.js/find/master
 $(document).ready(function () {
 
     // to render html select tag
@@ -78,17 +78,23 @@ $(document).ready(function () {
         });
     };
     // docs: https://github.com/selectize/selectize.js/blob/master/docs/usage.md
+
+    var problems;
     $('#search').selectize({
-        valueField: 'name',
+        //valueField: ['contest_id','id'],
+        //x = 'id'+'_'+'contest_id';
+        //valueField: x,
+        valueField: 'id',
         labelField: 'name',
         searchField: ['name'],
         options: [],
         create: false,
-        preload: true,
+        focus: true,
         closeAfterSelect: true,
         // The max number of items to render at once in the dropdown list of options.	
         maxOptions: 10,
         maxItems: 1,
+        selectOnTab: true,
         render: {
             //name, site, tournament
             option: function(item, escape) {
@@ -99,29 +105,23 @@ $(document).ready(function () {
                     ' <span class="name">' +
                     escape(item.name) +
                     ' </span>' +
-                    ' <span class="site">' +
-                    escape(item.site) +
+                    ' - ' +
+                    ' <span class="contest">' +
+                    escape(item.contest_name) +
                     ' </span>' +
+                    ' - ' +
                     ' <span class="tournament">' +
-                    escape(item.tournament) +
+                    escape(item.tournament_name) +
                     ' </span>' +
                     '</div>';
             }
         },
-        /*
-        score: function(search) {
-            var score = this.getScoreFunction(search);
-            return function(item) {
-                return score(item) * (1 + Math.min(item.watchers / 100, 1));
-            };
-        },
-         */
         onLoad: function(){
             console.log("its onload");
         },
         onType: function(){
             console.log("its ontype");
-	},
+        },
         load: function(query, callback) {
             if (!query.length) return callback();
             $.ajax({
@@ -134,15 +134,45 @@ $(document).ready(function () {
                 success: function(res) {
                     //res = JSON.stringify((res));
                     res = JSON.parse(res);
+                    problems = res.problems;
                     console.log(res.problems);
-                    callback(res.problems.slice(0, 10));
+                    //var selected = selectizeControl.getItem(selectizeControl.getValue()).text()‌​;
+                    //var selected = $('#search').selectize()[0].selectize.getValue();
+                    //callback(res.problems.slice(0, 10));
+                    callback(res.problems);
                 }
             });
+        },
+        onChange: function(value) {
+            alert(value);
+            console.log("selected:::::: " + value);
+            //params="year=2017&round=qr&level=a&language=c&page=7"
+            //selected  = $selected.val();//.selectize;
+            //selected  = $selected.valueField;//.selectize;
+            //console.log(problems);
+            //for loop over each object in the selected till one of them id matches the value given then populate the params with the problem.id and contest_id 
+
+            for (var i = 0; i < problems.length; i++) {
+                if(problems[i].id == value){
+                    console.log(problems[i]);
+                    params="problem_id="+problems[i].id+"&contest_id="+problems[i].contest_id;
+                    gcj_api("solutions", params);
+                }
+                //Do something
+            }
         }
     });
 
-    params="year=2017&round=qr&level=a&language=c&page=7"
-    //gcj_api("solutions", params);
+    $("i").css( 'cursor', 'pointer' );
+
+    $("#solution_toggle").click(function() {
+        $("#lapse").toggle();
+        $("#code").toggle();
+        //$("classforgist").toggle();
+        //$("classforlapse").toggle(); // make lapse by default hidden to toggle correctly
+    });
+
+    
 });
 //$("#solutions").redraw();
 // HACKS here
