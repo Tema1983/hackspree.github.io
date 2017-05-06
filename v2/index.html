@@ -49,7 +49,6 @@
 
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
     <!--
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.2.6/gridstack.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/css/foundation.css">
@@ -65,6 +64,8 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/css/themes/tooltipster-light.min.css">
     <link rel="stylesheet" href="css/main.css">
     <!--
       -->   
@@ -83,16 +84,33 @@
   <div id="search">search...</div>
 </div>
 
-
-<div class='upper_navigation' style="word-spacing: 30px;">
+<!--
+    <i class="medium material-icons">mood_bad</i>
   <i class="medium material-icons">turned_in_not</i>
+    -->
+<div class='upper_navigation' style="word-spacing: 30px;">
 
   <span id="solution_toggle">
-    <i id="code" class="front medium material-icons">code</i>
+    <i id="code" class="front medium material-icons active">code</i>
     <i id="lapse" style="display: none" class="back medium material-icons">movie</i>
   </span>
+  <i class="medium material-icons" title="already visited">beenhere</i>
+  <i class="medium material-icons" title="very cool">whatshot</i>
 
-  <i class="medium material-icons">stars</i>
+  <span class="toggle">
+    <i class="medium material-icons" title="understood">mood</i>
+  </span>
+
+  <i class="medium material-icons">chat
+    <!-- ircbot that suggests the
+    proper channel according to the programming language and connects
+    conversations to the user
+    -->
+  </i>
+
+  <i class="medium material-icons tooltip" title="star this solution">stars</i>
+  <i class="medium material-icons tooltip" title="this is">rss_feed</i>
+
 </div>
 <div class="row">
   <div id="solutions" class="solutionslider">
@@ -129,10 +147,10 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
         integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
         crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.2.6/gridstack.min.js"></script>
 
 <!--
-    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.2.6/gridstack.min.js"></script>
+<script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
     -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.13/clipboard.min.js"></script>
@@ -146,16 +164,18 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 
 <!--
-<script src="https://vjs.zencdn.net/5.11.8/video.js"></script>
+    <script src="https://vjs.zencdn.net/5.11.8/video.js"></script>
     <script src="js/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
     -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sifter/0.5.2/sifter.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/microplugin/0.0.3/microplugin.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.4/js/selectize.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/js/jquery.tooltipster.min.js"></script>
 <!--
-<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js">
--->
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js">
+      -->
 <script src="js/main.js"></script>
 
 <!-- http://h4x3x.com/ we will win! 7aneksab! -->

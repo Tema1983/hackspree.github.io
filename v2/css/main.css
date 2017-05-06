@@ -111,7 +111,7 @@ input:-webkit-autofill:active {
 }
 
 input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea{
-    font-size: 14px !important;
+    font-size: 22px !important;
 }
 
 .hvr-shadow {
@@ -262,4 +262,22 @@ border: 1px solid black !important;
 }
 .icon.source {
     background-image: url(images/repo-source.png);
+}
+
+i{
+    color: grey;
+    opacity: 0.8;
+}
+
+i:active{
+    color: #eb4c36;
+    opacity: 0.8;
+}
+
+i:hover{
+    /*    
+    opacity: 0.7;
+    filter: alpha(opacity=50); /* For IE8 and earlier 
+   */
+    color: #ffc900;
 }

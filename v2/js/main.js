@@ -7,7 +7,7 @@ console.log('%c | -------------------------------- |', 'background: white; color
 
 //TODO use history.js https://github.com/browserstate/history.js/find/master
 $(document).ready(function () {
-
+    
     // to render html select tag
     $('select').material_select();
 
@@ -144,7 +144,6 @@ $(document).ready(function () {
             });
         },
         onChange: function(value) {
-            alert(value);
             console.log("selected:::::: " + value);
             //params="year=2017&round=qr&level=a&language=c&page=7"
             //selected  = $selected.val();//.selectize;
@@ -170,6 +169,12 @@ $(document).ready(function () {
         $("#code").toggle();
         //$("classforgist").toggle();
         //$("classforlapse").toggle(); // make lapse by default hidden to toggle correctly
+    });
+
+
+    $('.tooltip').tooltipster({
+        theme: 'tooltipster-light',
+        position: 'relative'
     });
 
     
