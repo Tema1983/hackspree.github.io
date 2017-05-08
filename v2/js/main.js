@@ -27,11 +27,11 @@ $(document).ready(function () {
         $.blockUI({
             message: '<h1><img src="busy.gif" /> crawling...</h1>', 
             //message: '<h6> crawling . . . </h6>', 
-            //message: '<h6><img style="width: 10px" src="img/loading.gif" /> crawling...</h6>', 
-            message: '<h6> crawling...</h6>', 
+            message: '<h6><img style="width: 40px" src="img/loading.gif" /></br></br></br> crawling...</h6>', 
+            //message: '<h6> crawling...</h6>', 
             css: { 
                 border: 'none', 
-                padding: '15px', 
+                padding: '25px', 
                 backgroundColor: '#000', 
                 '-webkit-border-radius': '10px', 
                 '-moz-border-radius': '10px', 
