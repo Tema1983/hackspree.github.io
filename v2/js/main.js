@@ -23,7 +23,26 @@ $(document).ready(function () {
     // problems API
     function gcj_api(endpoint, params){
         console.log("sending GET request with params: " + params);
+        // block while crawling solutions
+        $.blockUI({
+            message: '<h1><img src="busy.gif" /> crawling...</h1>', 
+            //message: '<h6> crawling . . . </h6>', 
+            //message: '<h6><img style="width: 10px" src="img/loading.gif" /> crawling...</h6>', 
+            message: '<h6> crawling...</h6>', 
+            css: { 
+                border: 'none', 
+                padding: '15px', 
+                backgroundColor: '#000', 
+                '-webkit-border-radius': '10px', 
+                '-moz-border-radius': '10px', 
+                opacity: .5, 
+                color: '#fff' 
+            }
+        }); 
+        /*
+        */
         $.ajax({
+           
             // url: "https://hackspree.com/gcj/problems",
             // url: "https://hackspree.com/gcj/solutions",
             url: "http://0.0.0.0:9393/gcj/" + endpoint ,
@@ -31,6 +50,7 @@ $(document).ready(function () {
             data: params,
             dataType: 'json',
             success: function (data) {
+                $.unblockUI();
                 // Show Query Stats
                 //$('#queryStats').empty().append("showing best <b>" + data.tpbbot.results_count + "</b> matching results for <b>" + data.query + "</b> in " + data.tpbbot.search_time + " secs");
                 // data = JSON.parse(data);
@@ -69,7 +89,8 @@ $(document).ready(function () {
                     speed: 400,
                     slidesToShow: 1,
                     appendArrows: $('.upper_navigation'),
-                    appendDots: $('.lower_navigation'),
+                    //appendArrows: $('#solutions'),
+                    //appendDots: $('.lower_navigation'),
                     prevArrow: "<i class='medium material-icons' style='cursor: pointer'>skip_previous </i>",
                     nextArrow: "<i class='medium material-icons' style='cursor: pointer'>skip_next </i>",
                     adaptiveHeight: true
@@ -181,3 +202,4 @@ $(document).ready(function () {
 });
 //$("#solutions").redraw();
 // HACKS here
+//$(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);
