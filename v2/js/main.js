@@ -76,7 +76,8 @@ $(document).ready(function () {
            
             // url: "https://hackspree.com/gcj/problems",
             // url: "https://hackspree.com/gcj/solutions",
-            url: "http://0.0.0.0:9393/gcj/" + endpoint ,
+            //url: "http://0.0.0.0:9393/gcj/" + endpoint ,
+            url: "https://api.hackspree.com:8888/gcj/" + endpoint ,
 
             data: params,
             dataType: 'json',
