@@ -20,6 +20,37 @@ $(document).ready(function () {
     };
     search("love is all around"); 
 
+    function createSlick(){  
+        $('.solutionslider').empty();
+        // Using slick now (after data arrival)
+        $('.solutionslider').slick({
+            //variableWidth: true,
+            //variableWidth: true
+            // width: 270px
+            lazyLoad: 'ondemand',
+            dots: false,
+            infinite: false,
+            speed: 400,
+            slidesToShow: 1,
+            appendArrows: $('#arrows'),
+            //appendDots: $('.lower_navigation'),
+            prevArrow: "<i class='medium material-icons' style='cursor: pointer'>skip_previous </i>",
+            nextArrow: "<i class='medium material-icons' style='cursor: pointer'>skip_next </i>",
+            adaptiveHeight: false, 
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        autoplay: false,
+                        adaptiveHeight: true
+                    }
+                }
+            ]
+        });
+    };
+
+
+    
     // problems API
     function gcj_api(endpoint, params){
         console.log("sending GET request with params: " + params);
@@ -27,7 +58,7 @@ $(document).ready(function () {
         $.blockUI({
             message: '<h1><img src="busy.gif" /> crawling...</h1>', 
             //message: '<h6> crawling . . . </h6>', 
-            message: '<h6><img style="width: 40px" src="img/loading.gif" /></br></br></br> crawling...</h6>', 
+            message: '<h6><img style="width: 40px" src="img/loading.gif" /></br></br></br> c r a w l i n g </h6>', 
             //message: '<h6> crawling...</h6>', 
             css: { 
                 border: 'none', 
@@ -50,7 +81,6 @@ $(document).ready(function () {
             data: params,
             dataType: 'json',
             success: function (data) {
-                $.unblockUI();
                 // Show Query Stats
                 //$('#queryStats').empty().append("showing best <b>" + data.tpbbot.results_count + "</b> matching results for <b>" + data.query + "</b> in " + data.tpbbot.search_time + " secs");
                 // data = JSON.parse(data);
@@ -59,7 +89,6 @@ $(document).ready(function () {
 
                 var ajax_solutions = data.solutions;
 
-                $('#solutions').empty();
 
                 $.each (ajax_solutions, function(index) {
                     console.log("id:" + ajax_solutions[index].id);
@@ -73,28 +102,14 @@ $(document).ready(function () {
                                '<script src="https://gist.github.com/anonymous/' + ajax_solutions[index].gist_id + '.js"></script>' +
                                //ajax_solutions[index].author +
                                "<br />" +
-                               "watch on youtube modal(gitlapse)" +
+                               "hidden (gitlapse) element for toggling" +
                                "<br />" 
                               );
-                    //*/
                 });
-                // Using slick now (after data arrival)
-                $('.solutionslider').slick({
-                    //variableWidth: true,
-                    //variableWidth: true
-                    // width: 270px
-                    lazyLoad: 'ondemand',
-                    dots: false,
-                    infinite: true,
-                    speed: 400,
-                    slidesToShow: 1,
-                    appendArrows: $('.upper_navigation'),
-                    //appendArrows: $('#solutions'),
-                    //appendDots: $('.lower_navigation'),
-                    prevArrow: "<i class='medium material-icons' style='cursor: pointer'>skip_previous </i>",
-                    nextArrow: "<i class='medium material-icons' style='cursor: pointer'>skip_next </i>",
-                    adaptiveHeight: true
-                });
+
+                createSlick(); 
+                $.unblockUI();
+                
             },
         });
     };
@@ -165,7 +180,10 @@ $(document).ready(function () {
             });
         },
         onChange: function(value) {
-            console.log("selected:::::: " + value);
+            // to reset the solutionslider
+            //$('#solutions').remove();
+
+            //console.log("selected:::::: " + value);
             //params="year=2017&round=qr&level=a&language=c&page=7"
             //selected  = $selected.val();//.selectize;
             //selected  = $selected.valueField;//.selectize;
@@ -176,10 +194,16 @@ $(document).ready(function () {
                 if(problems[i].id == value){
                     console.log(problems[i]);
                     params="problem_id="+problems[i].id+"&contest_id="+problems[i].contest_id;
+
+                    //$('.solutions').empty();
+                    //$(window).on( 'resize', createSlick );
+                    // $(".solutionslider").not('.slick-initialized').slick()
                     gcj_api("solutions", params);
                 }
                 //Do something
             }
+            //$(window).on( 'resize', createSlick );
+            //$('.solutionslider').slick({
         }
     });
 
@@ -200,6 +224,9 @@ $(document).ready(function () {
 
     
 });
+
+
+
 //$("#solutions").redraw();
 // HACKS here
 //$(document).ajaxStart($.blockUI).ajaxStop($.unblockUI);

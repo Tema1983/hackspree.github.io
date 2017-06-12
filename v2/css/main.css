@@ -280,4 +280,14 @@ i:hover{
     filter: alpha(opacity=50); /* For IE8 and earlier 
    */
     color: #ffc900;
+    text-shadow: 1px 1px;
+    text-shadow: 2px 2px 4px #000000;
 }
+
+#solutions{
+    overflow:auto !important;
+}
+.slick-slide{
+    overflow:auto !important;
+}
+    
