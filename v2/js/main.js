@@ -163,8 +163,8 @@ $(document).ready(function () {
             $.ajax({
                 //url: 'https://api.github.com/legacy/repos/search/' + encodeURIComponent(query),
                 //url: 'http://127.0.0.1:9393/search?query=' + encodeURIComponent(query),
-                //url: 'https://api.hackspree.com:9393/search?query=' + encodeURIComponent(query),
-                url: 'http://api.hackspree.com:9393/search?query=' + encodeURIComponent(query),
+                //url: 'http://api.hackspree.com:9393/search?query=' + encodeURIComponent(query),
+                url: 'https://api.hackspree.com:8888/search?query=' + encodeURIComponent(query),
                 type: 'GET',
                 error: function() {
                     callback();
