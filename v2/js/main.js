@@ -5,6 +5,16 @@ console.log('%c | ---------   hackspree   -------- |', 'background: white; color
 console.log('%c | -------------------------------- |', 'background: white; color: green; display: block;');
 console.log('%c | -------------------------------- |', 'background: white; color: green; display: block;');
 
+// a get Page Params function
+// getPP()  //returns {key1:val1, key2:val2}
+// or
+// getPP("key1")  //returns val1
+function getPP(k){
+    var p={};
+    location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){p[k]=v})
+    return k?p[k]:p;
+}
+
 //TODO use history.js https://github.com/browserstate/history.js/find/master
 $(document).ready(function () {
     
@@ -12,6 +22,8 @@ $(document).ready(function () {
     $('select').material_select();
 
     console.log('logging: ');
+    myvalue = getPP();
+    console.log('getPP: solution number is ' + getPP("number"));
 
     function search(query){
         console.log('search: ' + query);
@@ -19,7 +31,7 @@ $(document).ready(function () {
         //window.history.pushState("string", "Title", "/newUrl");
     };
     search("love is all around"); 
-
+/*
     function createSlick(){  
         $('.solutionslider').empty();
         // Using slick now (after data arrival)
@@ -48,7 +60,7 @@ $(document).ready(function () {
             ]
         });
     };
-
+*/
 
     
     // problems API
@@ -88,28 +100,60 @@ $(document).ready(function () {
                 console.log(data);
                 // console.log(data.query);
 
-                var ajax_solutions = data.solutions;
 
 
-                $.each (ajax_solutions, function(index) {
-                    console.log("id:" + ajax_solutions[index].id);
-                    console.log("author: " + ajax_solutions[index].author);
+                
+                console.log("data_solutions" + data.solutions);
 
-                    $("#solutions").append("<div id='hackspree"+ajax_solutions[index].id+"'>"+ ajax_solutions[index].id + "</div>"
-                                          );
-                    //console.log (Object.prototype.toString.call(problem));
-                    //console.log (problem["title"]);
-                    postscribe('#hackspree'+ajax_solutions[index].id,
-                               '<script src="https://gist.github.com/anonymous/' + ajax_solutions[index].gist_id + '.js"></script>' +
-                               //ajax_solutions[index].author +
-                               "<br />" +
-                               "hidden (gitlapse) element for toggling" +
-                               "<br />" 
-                              );
-                });
+                console.log("id:" + data.solutions.id);
+                var id =  data.solutions.id;
 
-                createSlick(); 
-                $.unblockUI();
+                console.log("author: " + data.solutions.author);
+                var author =  data.solutions.author;
+
+                console.log("gist_id: " + data.solutions.gist_id);
+                var gist_id =  data.solutions.gist_id;
+
+                $("#solution").empty(); // make sure that element is empty before appending via postscribe
+
+                postscribe('#solution',
+                           '<script src="https://gist.github.com/anonymous/' + gist_id + '.js"></script>' +
+                           "<br />",
+                           {
+                               error: function(e) {
+                                   console.log(e);
+                               }
+                           });
+                
+                           
+                /*
+                  var ajax_solutions = data.solutions;
+                  
+                  $.each (ajax_solutions, function(index) {
+                  console.log("id:" + ajax_solutions[index].id);
+                  console.log("author: " + ajax_solutions[index].author);
+
+                  $("#solutions").append("<div id='hackspree"+ajax_solutions[index].id+"'>"+ ajax_solutions[index].id + "</div>"
+                  );
+                  //console.log (Object.prototype.toString.call(problem));
+                  //console.log (problem["title"]);
+
+                  console.log('gist_id: '+ajax_solutions[index].gist_id);
+
+                  // template for gist embed <script src="https://gist.github.com/anonymous/06770564fff8ef308578b88f22d64c05.js"></script>
+                  postscribe('#hackspree'+ajax_solutions[index].id,
+                  '<script src="https://gist.github.com/anonymous/' + ajax_solutions[index].gist_id + '.js"></script>' +
+                  //ajax_solutions[index].author +
+                  "<br />" +
+                  "hidden (gitlapse) element for toggling" +
+                  "<br />" 
+                  );
+                  });
+
+                */
+
+                //createSlick(); 
+                $.unblockUI(); // remove the crawling UI ...
                 
             },
         });
@@ -127,7 +171,7 @@ $(document).ready(function () {
         options: [],
         create: false,
         focus: true,
-        closeAfterSelect: true,
+        //closeAfterSelect: true,
         // The max number of items to render at once in the dropdown list of options.	
         maxOptions: 10,
         maxItems: 1,
